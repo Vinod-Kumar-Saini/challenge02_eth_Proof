@@ -1,0 +1,23 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.25;
+
+contract etherFromUser {
+    uint256 public starting_amount;
+
+    function deposit(uint256 amount) public {
+        starting_amount = amount;
+    }
+
+    function toWei() public view returns (uint256) {
+        return starting_amount * 1 ether;
+    }
+
+    function toEther() public view returns (uint256) {
+        return starting_amount / 1 ether;
+    }
+
+    function toGwei() public view returns (uint256) {
+        return starting_amount / 1 gwei;
+    }
+}
